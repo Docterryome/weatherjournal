@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+projectData = [];
 // Express to run server and routes
 var express = require('express');
 
@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Initialize the main project folder
-app.express.static('website');
+app.use(express.static('website'));
 // Spin up the server
 app.listen(3000, startServer);
 // Callback to debug
@@ -27,11 +27,20 @@ function startServer(){
 }
 
 // Initialize all route with a callback function
-function allRoute(){
-    return projectData;
+function allRoute(request, response){
+    console.log("I'm am working right");
+   response.send(projectData);
+}
+
+function addWeatherdata(request, response){
+    projectData.push(request.body);
+    console.log(response);
+    response.send("OK");
 }
 
 // Callback function to complete GET '/all'
 app.get('/all', allRoute);
 
 // Post Route
+app.post('/addWeatherData', addWeatherdata);
+
