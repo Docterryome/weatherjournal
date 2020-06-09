@@ -1,7 +1,7 @@
 
 
 // Personal API Key for OpenWeatherMap API
-const appId = '*****************************';
+const appId = "0e50792790573baca2666d4a9ea1109f"
 let zipCode = '37209';
 let unit = 'imperial';
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather`
