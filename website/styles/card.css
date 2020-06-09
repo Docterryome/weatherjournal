@@ -1,0 +1,58 @@
+.warm-color{
+    background-image: linear-gradient(#ff5e62, #ffe81c);
+}
+
+
+.hot-color{
+    background-image: linear-gradient(red, #f06d06);
+}
+
+.cool-color{
+    background-image: linear-gradient(#02AAB0, #00cdac);
+}
+
+.cold-color{
+    background-image: linear-gradient(#4568DC, #B06AB3);
+}
+
+.weather-card{
+    height: 25vh;
+    min-height: 200px;
+    width: 25vw;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: .5em 1em .5em 1em;
+}
+
+.city{
+    font-size: 2em;
+    margin-bottom: .1em;
+}
+
+.temp{
+    font-size: 2em;
+}
+
+.temp-sec{
+    display: flex;
+    flex-direction: row;
+}
+
+.temp-sec > div{
+    margin-right: 1em;
+}
+
+.weather-info{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: .5em;
+}
+
+.weather-info > div {
+    font-style: italic;
+}
+
+.date{
+    margin-right: 1em;
+}

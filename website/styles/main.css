@@ -1,0 +1,7 @@
+@import 'card.css';
+@import 'header.css';
+
+
+.hidden{
+    display: none;
+}
