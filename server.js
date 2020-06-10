@@ -36,7 +36,8 @@ function addWeatherdata(request, response){
     const dataObject = { city: request.body.name,
                          temp: request.body.main.temp, 
                          weatherDesc: request.body.weather[0].main,
-                         weatherIcon: request.body.weather[0].icon
+                         weatherIcon: request.body.weather[0].icon,
+                         userData: request.body.userData
                         }
     projectData.push(dataObject);
     console.log(response);

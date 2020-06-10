@@ -51,7 +51,7 @@
     
 }
 
-.user{
+.userInfo{
     border-top: 1px solid black;
     grid-area: user;
     padding: .5em;

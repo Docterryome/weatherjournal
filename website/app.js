@@ -12,6 +12,8 @@ const date = document.querySelector('.date');
 const icon = document.querySelector('.icon-pic');
 const weatherDesc = document.querySelector('.weather-description');
 const weatherCard = document.querySelector('.weather-card');
+const userText = document.getElementById('userText');
+const userInfo = document.querySelector('.userInfo');
 const tempColor = { hotTemp: "hot-color", warmTemp: "warm-color", coolTemp: "cool-color", coldTemp: "cold-color"};
 let colorTemp = '';
 
@@ -46,6 +48,7 @@ const changeColor = (temp) => {
 function updateData() {
     zipCode = document.getElementById('zipCode').value;
     getWeather(`${weatherUrl}?zip=${zipCode}&units=${unit}&appid=${appId}`).then(response => {
+        response.userData = userText.value;
         postData('/addWeatherData', response).then(resp => {
             console.log(resp);
             getProjectData('/all').then(projectData => {
@@ -54,6 +57,7 @@ function updateData() {
                 city.textContent = `${lastIndex.city}`;
                 temp.firstChild.nodeValue = `${lastIndex.temp}`;
                 weatherDesc.textContent = lastIndex.weatherDesc;
+                userInfo.textContent = lastIndex.userData;
                 icon.setAttribute('src', `http://openweathermap.org/img/wn/${lastIndex.weatherIcon}@2x.png`);
                 date.textContent = getNewDate();
                 weatherCard.classList.remove('hidden');
