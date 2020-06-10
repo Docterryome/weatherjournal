@@ -33,7 +33,12 @@ function allRoute(request, response){
 }
 
 function addWeatherdata(request, response){
-    projectData.push(request.body);
+    const dataObject = { city: request.body.name,
+                         temp: request.body.main.temp, 
+                         weatherDesc: request.body.weather[0].main,
+                         weatherIcon: request.body.weather[0].icon
+                        }
+    projectData.push(dataObject);
     console.log(response);
     response.send("OK");
 }

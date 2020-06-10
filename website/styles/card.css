@@ -15,43 +15,50 @@
 }
 
 .weather-card{
-    height: 25vh;
-    min-height: 200px;
-    width: 25vw;
-    min-width: 300px;
-    display: flex;
-    flex-direction: column;
-    padding: .5em 1em .5em 1em;
+    padding: .5em;
+    width: 400px;
+    height: 200px;
+    display: grid;
+    border-radius: 2%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "info info info temp"
+                         "user user user user";
 }
 
-.city{
-    font-size: 2em;
-    margin-bottom: .1em;
+.city-section{
+    grid-area: info;
+    display: flex;
+}
+
+.sub{
+    position: relative;
+    bottom: 1ex;
+    font-size: .6em;
+}
+
+.info{
+    justify-content: center;
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    margin-left: .5em;
 }
 
 .temp{
+    align-items: center;
     font-size: 2em;
+    
+}
+
+.user{
+    border-top: 1px solid black;
+    grid-area: user;
+    padding: .5em;
 }
 
 .temp-sec{
-    display: flex;
-    flex-direction: row;
-}
-
-.temp-sec > div{
-    margin-right: 1em;
-}
-
-.weather-info{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: .5em;
-}
-
-.weather-info > div {
-    font-style: italic;
-}
-
-.date{
-    margin-right: 1em;
+    grid-area: temp;
+    display: inline-flex; 
+    align-items: center;
 }
