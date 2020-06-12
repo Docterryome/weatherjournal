@@ -5,21 +5,10 @@
 This application determines the weather, using the openWeatherAPI.
 
 
-### server.js TODO
+### What I learend
 
-1. Add boilerpoint code to server JS
-2. Figure out  what routes you need for the post and get request for the server.
-3. configure the '/all' route.
+What I learend from the application is how to handle external API inside node.js applciaton using the express library. Also on the browswer side, I leared how to use fetch, async, and await.
 
-### app.js TODO
+#### TODO
 
-1. Add the weather api key and get request needed
-2. Construct the url for the get request from the api site.
-3. Manipulate the DOM using javascript when we get the data back from the weather api.
-
-### index.html TODO
-
-1. Figure out what infomration is needed on the website.
-2. Write out the basic backbone of the website.
-
-### Css TODO
+Still need to get a pretty UI going, may need to do some research on how to make a pretty website. I am using grid and flexbox and still have not used any 3rd party libraries.
