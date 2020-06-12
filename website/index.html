@@ -7,39 +7,50 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
-    <div class="weather-card hidden">
-        <div class="city-section">
-            <div class="weather-icon">
-                <img class="icon-pic" src="./replaceMe" alt='weather picture'>
+    <div class="content">
+        <section class="header"></section>
+        <section class="form-section">
+            <div class="formInfo">
+                <label for="zipCode">Zip Code: </label>
+                <input id="zipCode" type="input">
+                <textarea id ="userText"></textarea>
+                <button onclick="updateData()">Click Me!</button>
             </div>
-            <div class="info">
-                <div class="city">
-                    Southaven
+        </section>
+        <section class="weather-section">
+            <div class="weather-card">
+                <div class="city-section">
+                    <div class="weather-icon">
+                        <img class="icon-pic" src="./replaceMe" alt='weather picture'>
+                    </div>
+                    <div class="info">
+                        <div class="city">
+                            Southaven
+                        </div>
+                        <div class="date">
+                            06/2/20
+                        </div>
+                        <div class="weather-description">
+                            
+                        </div>
+                    </div>
                 </div>
-                <div class="date">
-                    06/2/20
+                <div class="temp-sec">
+                    <div class="temp">
+                        78.7
+                        <span class="sub">&deg F</span>
+                    </div>
                 </div>
-                <div class="weather-description">
-                        
+                <div class="userInfo">
+                    Black People are the coolest!
                 </div>
             </div>
-        </div>
-        <div class="temp-sec">
-            <div class="temp">
-                78.7
-                <span class="sub">&deg F</span>
-            </div>
-        </div>
-        <div class="userInfo">
-            Black People are the coolest!
-        </div>
-    </div>
-    <br>
-    <div class="formInfo">
-        <label for="zipCode">Zip Code: </label>
-        <input id="zipCode" type="input">
-        <textarea id ="userText"></textarea>
-    <button onclick="updateData()">Click Me!</button>
+        </section>
+        <section class="footer">
+            
+        </section>
+       
+
     </div>
     <script src="app.js"></script>
 </body>

@@ -1,0 +1,13 @@
+.header{
+    grid-area: header;
+    display: grid;
+}
+
+.menu{
+
+}
+
+
+.footer{
+    grid-area: footer;
+}

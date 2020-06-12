@@ -6,7 +6,16 @@
     display: none;
 }
 
+.content{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "header header header header header header header header"
+    "form form form form form form form form"
+    "weather weather weather weather weather weather weather weather"
+    "footer footer footer footer footer footer footer footer"
+}
 
 .formInfo{
-    
+    display: block;
 }
