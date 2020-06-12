@@ -1,7 +1,9 @@
 @import 'card.css';
 @import 'header.css';
 
-
+* {
+    border: 1px solid blanchedalmond;
+}
 .hidden{
     display: none;
 }
@@ -18,4 +20,40 @@
 
 .formInfo{
     display: block;
+}
+
+.form-section{
+    grid-area: form;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.zip-code > * {
+    margin: .4em;
+}
+
+.user-content > * {
+    margin: .4em;
+}
+
+
+.form-info{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-info > div {
+    margin: .3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-section{
+    margin: 1em;
+    grid-area: weather;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }

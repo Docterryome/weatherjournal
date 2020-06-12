@@ -8,12 +8,21 @@
 </head>
 <body>
     <div class="content">
-        <section class="header"></section>
+        <section class="header">
+            Header gose here.
+        </section>
         <section class="form-section">
-            <div class="formInfo">
-                <label for="zipCode">Zip Code: </label>
-                <input id="zipCode" type="input">
-                <textarea id ="userText"></textarea>
+            <div class="form-info">
+                <div class="zip-code">
+                    <label for="zipCode">Zip Code</label>
+                    <input id="zipCode" type="input">
+                </div>
+
+                <div class="user-content">
+                    <label>How are you feeling?</label>
+                    <textarea id ="userText"></textarea>
+                </div>
+                
                 <button onclick="updateData()">Click Me!</button>
             </div>
         </section>
@@ -47,7 +56,7 @@
             </div>
         </section>
         <section class="footer">
-            
+            Footer
         </section>
        
 
