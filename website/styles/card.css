@@ -23,10 +23,10 @@
     max-height: 200px;
     display: grid;
     border-radius: 2%;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: "info info info temp"
-                         "user user user user";
+    grid-template-areas: "info info info temp temp"
+                         "user user user user user";
 }
 
 .city-section{
@@ -51,7 +51,6 @@
 .temp{
     align-items: center;
     font-size: 2em;
-    
 }
 
 .userInfo{
@@ -62,6 +61,7 @@
 
 .temp-sec{
     grid-area: temp;
-    display: inline-flex; 
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
 }
