@@ -1,10 +1,9 @@
+@import 'colors.css';
 @import 'card.css';
 @import 'header.css';
 @import 'form.css';
 
-section {
-    border: 1px solid blanchedalmond;
-}
+
 .hidden{
     display: none;
 }
@@ -18,43 +17,5 @@ section {
     "form form form form form form form form"
     "weather weather weather weather weather weather weather weather"
     "footer footer footer footer footer footer footer footer"
-}
-
-
-.form-section{
-    grid-area: form;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.zip-code > * {
-    margin: .4em;
-}
-
-.user-content > * {
-    margin: .4em;
-}
-
-
-.form-info{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.form-info > div {
-    margin: .3em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.weather-section{
-    margin: 1em;
-    grid-area: weather;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
 }
 

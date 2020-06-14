@@ -28,7 +28,6 @@ function startServer(){
 
 // Initialize all route with a callback function
 function allRoute(request, response){
-    console.log("I'm am working right");
    response.send(projectData);
 }
 
@@ -40,7 +39,6 @@ function addWeatherdata(request, response){
                          userData: request.body.userData
                         }
     projectData.push(dataObject);
-    console.log(response);
     response.send("OK");
 }
 

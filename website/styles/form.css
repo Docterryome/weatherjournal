@@ -6,3 +6,36 @@ button{
     color: #FFF;
     background-color: #000;
 }
+
+.form-section{
+    color: var(--text-color);
+    border: var(--border-style);
+    padding: 1em;
+    grid-area: form;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.zip-code > * {
+    margin: .4em;
+}
+
+.user-content > * {
+    margin: .4em;
+}
+
+
+.form-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-info > div {
+    margin: .3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

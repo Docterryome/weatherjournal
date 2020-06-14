@@ -13,7 +13,7 @@ const icon = document.querySelector('.icon-pic');
 const weatherDesc = document.querySelector('.weather-description');
 const weatherCard = document.querySelector('.weather-card');
 const userText = document.getElementById('userText');
-const userInfo = document.querySelector('.userInfo');
+const userInfo = document.querySelector('.user-info');
 const tempColor = { hotTemp: "hot-color", warmTemp: "warm-color", coolTemp: "cool-color", coldTemp: "cold-color"};
 let colorTemp = '';
 
