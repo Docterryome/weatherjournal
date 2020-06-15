@@ -7,37 +7,69 @@
     <link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 <body>
-    <div class="weather-card hidden">
-        <div class="city-section">
-            <div class="city">
-                Southaven
+    <div class="content">
+        <section class="header">
+            <div class="title-section">
+                <h1 class="title">Weather App</h1>
             </div>
-            <div class="weather-info">
-                <div class="date">
-                    06/2/20
+            <nav class="menu">
+                <ul id="menu-items">
+                    <li><a class="link_item" href="#">Home</a></li>
+                    <li><a class="link_item" href="#">Contact</a></li>
+                    <li><a class="link_item" href="#">Weather</a></li>
+                </ul>
+            </nav>
+        </section>
+        <section class="form-section">
+            <div class="form-info">
+                <div class="zip-code">
+                    <label for="zipCode">Zip Code</label>
+                    <input id="zipCode" type="input">
                 </div>
-                <div class="weather-description">
-                    
+
+                <div class="user-content">
+                    <label>How are you feeling?</label>
+                    <textarea id ="userText"></textarea>
+                </div>
+                <button onclick="updateData()">Post Card</button>
+            </div>
+        </section>
+        <section class="weather-section">
+            <div class="weather-title">
+                <h3 id="card-title">Weather Card</h3>
+            </div>
+            <div class="weather-card hidden">
+                <div class="city-section">
+                    <div class="weather-icon">
+                        <img class="icon-pic" src="./replaceMe" alt='weather picture'>
+                    </div>
+                    <div class="info">
+                        <div class="city">
+                            Southaven
+                        </div>
+                        <div class="date">
+                            06/2/20
+                        </div>
+                        <div class="weather-description">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="temp-sec">
+                    <div class="temp">
+                        78.7
+                        <span class="sub">&deg F</span>
+                    </div>
+                </div>
+                <div class="user-info">
+                    Black People are the coolest!
                 </div>
             </div>
-        </div>
-        <div class="temp-sec">
-            <div class="temp">
-                78.7
-            </div>
-            
-            <div class="icon">
-                <img class="icon-pic" src="./replaceMe" alt='weather picture'>
-            </div>
-        </div>
-        <div class="user">
-            Black People are the coolest!
-        </div>
+        </section>
+        <section class="footer">
+            <p class="legal-stuff">Webstie Desing by Docterryome Wilkins &copy2020</p>
+        </section>
     </div>
-    <br>
-    <label for="zipCode">Zip Code: </label>
-    <input id="zipCode" type="input">
-    <button onclick="updateData()">Click Me!</button>
     <script src="app.js"></script>
 </body>
 </html>

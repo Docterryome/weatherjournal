@@ -1,7 +1,7 @@
 
 
 // Personal API Key for OpenWeatherMap API
-const appId = '*****************************';
+const appId = "0e50792790573baca2666d4a9ea1109f"
 let zipCode = '37209';
 let unit = 'imperial';
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather`
@@ -12,7 +12,9 @@ const date = document.querySelector('.date');
 const icon = document.querySelector('.icon-pic');
 const weatherDesc = document.querySelector('.weather-description');
 const weatherCard = document.querySelector('.weather-card');
-let tempColor = { hotTemp: "hot-color", warmTemp: "warm-color", coolTemp: "cool-color", coldTemp: "cold-color"};
+const userText = document.getElementById('userText');
+const userInfo = document.querySelector('.user-info');
+const tempColor = { hotTemp: "hot-color", warmTemp: "warm-color", coolTemp: "cool-color", coldTemp: "cold-color"};
 let colorTemp = '';
 
 const getNewDate = () => {
@@ -45,24 +47,31 @@ const changeColor = (temp) => {
 /* Function called by event listener */
 function updateData() {
     zipCode = document.getElementById('zipCode').value;
-    console.log(zipCode);
     getWeather(`${weatherUrl}?zip=${zipCode}&units=${unit}&appid=${appId}`).then(response => {
-        console.log(response);
-        city.textContent = `${response.name}`;
-        temp.textContent = `${response.main.temp}`;
-        const weather = response.weather[0];
-        weatherDesc.textContent = weather.description;
-        icon.setAttribute('src', `http://openweathermap.org/img/wn/${weather.icon}.png`);
-        date.textContent = getNewDate();
-        weatherCard.classList.remove('hidden');
-        let myTemp = changeColor(temp.textContent);
-        if(colorTemp !== ''){
-            weatherCard.classList.replace(colorTemp, myTemp);
-        }
-        else{
-            weatherCard.classList.add(myTemp);
-        }
-        colorTemp = myTemp;
+        response.userData = userText.value;
+        postData('/addWeatherData', response).then(resp => {
+            console.log(resp);
+            getProjectData('/all').then(projectData => {
+                console.log(projectData);
+                const lastIndex = projectData[projectData.length - 1];
+                city.textContent = `${lastIndex.city}`;
+                temp.firstChild.nodeValue = `${lastIndex.temp}`;
+                weatherDesc.textContent = lastIndex.weatherDesc;
+                userInfo.textContent = lastIndex.userData;
+                icon.setAttribute('src', `http://openweathermap.org/img/wn/${lastIndex.weatherIcon}@2x.png`);
+                date.textContent = getNewDate();
+                weatherCard.classList.remove('hidden');
+                let myTemp = changeColor(temp.textContent);
+                if(colorTemp !== ''){
+                    weatherCard.classList.replace(colorTemp, myTemp);
+                }
+                else{
+                    weatherCard.classList.add(myTemp);
+                }
+                colorTemp = myTemp;
+            });
+        });
+
     });
 }
 
@@ -72,8 +81,25 @@ const getWeather = async (url = '', data ={}) => {
     const response = await fetch(url);
     return response.json();
 }
-/* Function to POST data */
 
+/* Function to POST data */
+const postData = async (url = '', data = {}) =>{
+    console.log(data);
+    const response = await fetch(url, {
+        method: 'POST',
+        credentails: 'same-origin',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    console.log(response.text());
+    return response
+}
 /* Function to GET Project Data */
+const getProjectData = async (url ='', data = {}) => {
+    const response = await fetch(url);
+    return response.json();
+}
 
 

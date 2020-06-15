@@ -2,7 +2,6 @@
     background-image: linear-gradient(#ff5e62, #ffe81c);
 }
 
-
 .hot-color{
     background-image: linear-gradient(red, #f06d06);
 }
@@ -15,44 +14,68 @@
     background-image: linear-gradient(#4568DC, #B06AB3);
 }
 
-.weather-card{
-    height: 25vh;
-    min-height: 200px;
-    width: 25vw;
-    min-width: 300px;
+.weather-section{
+    margin: 1em;
+    grid-area: weather;
     display: flex;
     flex-direction: column;
-    padding: .5em 1em .5em 1em;
+    align-items: center;
 }
 
-.city{
-    font-size: 2em;
-    margin-bottom: .1em;
+.weather-card{
+    padding: .5em;
+    margin: .5em;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 200px;
+    display: grid;
+    border-radius: 2%;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "info info info temp temp"
+                         "user user user user user";
+}
+
+#card-title{
+    color: var(--text-color);
+    font-family: var(--header-style);
+}
+
+.city-section{
+    grid-area: info;
+    display: flex;
+}
+
+.sub{
+    position: relative;
+    bottom: 1ex;
+    font-size: .6em;
+}
+
+.info{
+    justify-content: center;
+    font-size: 1.3em;
+    display: flex;
+    flex-direction: column;
+    margin-left: .5em;
 }
 
 .temp{
+    align-items: center;
     font-size: 2em;
 }
 
+.user-info{
+    font-family: var(--blog-style);
+    border-top: 1px solid black;
+    grid-area: user;
+    padding: .5em;
+}
+
 .temp-sec{
-    display: flex;
-    flex-direction: row;
-}
-
-.temp-sec > div{
-    margin-right: 1em;
-}
-
-.weather-info{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: .5em;
-}
-
-.weather-info > div {
-    font-style: italic;
-}
-
-.date{
-    margin-right: 1em;
+    grid-area: temp;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }

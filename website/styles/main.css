@@ -1,7 +1,21 @@
+@import 'colors.css';
 @import 'card.css';
 @import 'header.css';
+@import 'form.css';
 
 
 .hidden{
     display: none;
 }
+
+.content{
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(8, 1fr);
+    gap: .3em;
+    grid-template-areas: "header header header header header header header header"
+    "form form form form form form form form"
+    "weather weather weather weather weather weather weather weather"
+    "footer footer footer footer footer footer footer footer"
+}
+

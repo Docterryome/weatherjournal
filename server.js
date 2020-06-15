@@ -28,13 +28,17 @@ function startServer(){
 
 // Initialize all route with a callback function
 function allRoute(request, response){
-    console.log("I'm am working right");
    response.send(projectData);
 }
 
 function addWeatherdata(request, response){
-    projectData.push(request.body);
-    console.log(response);
+    const dataObject = { city: request.body.name,
+                         temp: request.body.main.temp, 
+                         weatherDesc: request.body.weather[0].main,
+                         weatherIcon: request.body.weather[0].icon,
+                         userData: request.body.userData
+                        }
+    projectData.push(dataObject);
     response.send("OK");
 }
 
